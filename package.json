@@ -1,0 +1,35 @@
+{
+  "name": "excel",
+  "version": "1.0.0",
+  "description": "pure javascript excel application",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/username40/excel.git"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "excel"
+  ],
+  "author": "Slava Romantsov <mr.v.e.romantsov@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/username40/excel/issues"
+  },
+  "homepage": "https://github.com/username40/excel#readme",
+  "private": true,
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.2.4",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
