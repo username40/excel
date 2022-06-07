@@ -1,4 +1,6 @@
 /** */
+import {capitalize} from '@core/utils';
+
 export class DomListener {
   // eslint-disable-next-line require-jsdoc
   constructor($root, listeners = []) {
@@ -10,7 +12,18 @@ export class DomListener {
   }
 
   initDOMListeners() {
-    console.log(this.listeners)
+    this.listeners.forEach(listener => {
+      const method = getMethodName(listener)
+      if (!this[method]) {
+        // eslint-disable-next-line max-len
+        throw new Error(`Method ${method} is not implemented in ${this.name || ''} Component`)
+      }
+      this.$root.on(listener, this[method].bind(this));
+    })
   }
-  removeDOMListener
+  removeDOMListeners() {}
+}
+
+function getMethodName(eventName) {
+  return `on${capitalize(eventName)}`
 }
