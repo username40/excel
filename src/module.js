@@ -1,6 +1,3 @@
-console.log('module.js')
-
-
 /**
  * Just a test method
  * return string
