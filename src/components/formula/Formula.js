@@ -1,26 +1,28 @@
-import {ExcelComponent} from '@core/ExcelComp';
+import {ExcelComponent} from '@core/ExcelComponent'
 
-// eslint-disable-next-line require-jsdoc
 export class Formula extends ExcelComponent {
+  static className = 'excel__formula'
+
   constructor($root) {
     super($root, {
       name: 'Formula',
       listeners: ['input', 'click']
-    });
+    })
   }
 
-  static className = 'excel__formula';
-  // eslint-disable-next-line require-jsdoc
   toHTML() {
-    return `<div class="info">fx</div>
-            <div class="input" contenteditable spellcheck="false"></div>`;
+    return `
+      <div class="info">fx</div>
+      <div class="input" contenteditable spellcheck="false"></div>
+    `
   }
 
   onInput(event) {
-    console.log('Formula: onInput', event)
+    console.log(this.$root)
+    console.log('Formula: onInput', event.target.textContent.trim())
   }
 
   onClick() {
-    console.log('onClick');
+    console.log('mk')
   }
 }
