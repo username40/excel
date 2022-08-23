@@ -1,10 +1,24 @@
-import {ExcelComponent} from '@core/ExcelComp';
-import {createTable} from '@/components/table/table.template';
-// eslint-disable-next-line require-jsdoc
+import {ExcelComponent} from '@core/ExcelComponent'
+import {createTable} from '@/components/table/table.template'
+import {resizeHandler} from '@/components/table/table.resize'
+import {shouldResize} from '@/components/table/table.functions'
+
 export class Table extends ExcelComponent {
   static className = 'excel__table'
-  // eslint-disable-next-line require-jsdoc
+
+  constructor($root) {
+    super($root, {
+      listeners: ['mousedown']
+    })
+  }
+
   toHTML() {
-    return createTable();
+    return createTable(20)
+  }
+
+  onMousedown(event) {
+    if (shouldResize(event)) {
+      resizeHandler(this.$root, event)
+    }
   }
 }
