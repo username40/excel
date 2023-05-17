@@ -1,5 +1,5 @@
 // observer pattern
-class Emitter {
+export class Emitter {
   constructor() {
     this.listeners = {}
   }
