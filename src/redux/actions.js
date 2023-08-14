@@ -2,7 +2,7 @@ import {
   CHANGE_TEXT,
   CHANGE_STYLES,
   TABLE_RESIZE,
-  APPLY_STYLE, CHANGE_TITLE
+  APPLY_STYLE, CHANGE_TITLE, UPDATE_DATE
 } from '@/redux/types';
 
 // action creator
@@ -40,3 +40,10 @@ export function changeTitle(data) {
     data
   }
 }
+
+export function updateDate() {
+  return {
+    type: UPDATE_DATE
+  }
+}
+
